@@ -60,6 +60,10 @@
         x = e.pageX - offset.left;
         y = e.pageY - offset.top;
         if (seed.hover(x, y)) {
+            const music = document.getElementById("bgMusic");
+            if (music) {
+                music.play().catch(() => {});
+            }
             hold = 0;
             canvas.unbind("click");
             canvas.unbind("mousemove");
